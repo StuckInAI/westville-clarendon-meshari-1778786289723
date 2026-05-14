@@ -1,0 +1,218 @@
+.section {
+  background: var(--color-cream-dark);
+  padding: var(--space-4xl) 0;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-terracotta);
+  margin-bottom: var(--space-sm);
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--color-forest-dark);
+  margin-bottom: var(--space-md);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: var(--color-white);
+  border: 1.5px solid rgba(212,168,83,0.4);
+  border-radius: var(--radius-full);
+  padding: 0.4rem 1.1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.badgeStars {
+  display: flex;
+  gap: 1px;
+}
+
+.badgeRating {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-charcoal);
+}
+
+.badgeSource {
+  font-size: 0.8rem;
+  color: var(--color-mid-gray);
+}
+
+.carouselWrapper {
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.navBtn {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: var(--color-white);
+  border: 1.5px solid var(--color-light-gray);
+  color: var(--color-forest);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  align-self: center;
+  transition: background var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+}
+
+.navBtn:hover {
+  background: var(--color-forest);
+  color: var(--color-cream);
+  border-color: var(--color-forest);
+  transform: scale(1.08);
+}
+
+.cardsRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  flex: 1;
+  overflow: hidden;
+}
+
+.card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  animation: slideIn 0.4s ease;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.slideLeft {
+  animation-name: slideInFromLeft;
+}
+
+@keyframes slideInFromLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.slideRight {
+  animation-name: slideIn;
+}
+
+.cardCenter {
+  box-shadow: var(--shadow-lg);
+  border: 1.5px solid rgba(212,168,83,0.3);
+  transform: translateY(-4px);
+}
+
+.cardStars {
+  display: flex;
+  gap: 2px;
+}
+
+.cardText {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 0.98rem;
+  color: var(--color-charcoal);
+  line-height: 1.7;
+  flex: 1;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.cardAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background: var(--color-forest);
+  color: var(--color-cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.cardName {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-charcoal);
+}
+
+.cardMeta {
+  font-size: 0.78rem;
+  color: var(--color-mid-gray);
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--color-light-gray);
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition-fast), width var(--transition-fast);
+}
+
+.dotActive {
+  background: var(--color-forest);
+  width: 24px;
+}
+
+@media (max-width: 768px) {
+  .cardsRow {
+    grid-template-columns: 1fr;
+  }
+  .card:not(:first-child) {
+    display: none;
+  }
+}

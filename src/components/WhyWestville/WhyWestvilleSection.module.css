@@ -1,0 +1,110 @@
+.section {
+  background: var(--color-cream);
+  padding: var(--space-4xl) 0;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-terracotta);
+  margin-bottom: var(--space-sm);
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--color-forest-dark);
+  margin-bottom: var(--space-md);
+}
+
+.subtext {
+  font-size: 1.05rem;
+  color: var(--color-mid-gray);
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.tile {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl) var(--space-lg);
+  text-align: center;
+  border: 1.5px solid var(--color-light-gray);
+  transition: background var(--transition-base), border-color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
+  cursor: default;
+}
+
+.tile:hover {
+  background: var(--color-forest);
+  border-color: var(--color-forest);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+}
+
+.tile:hover .tileTitle,
+.tile:hover .tileDesc {
+  color: var(--color-cream);
+}
+
+.tileIcon {
+  font-size: 2.8rem;
+  margin-bottom: var(--space-md);
+  line-height: 1;
+}
+
+.tileTitle {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-forest-dark);
+  margin-bottom: var(--space-sm);
+  transition: color var(--transition-base);
+}
+
+.tileDesc {
+  font-size: 0.875rem;
+  color: var(--color-mid-gray);
+  line-height: 1.65;
+  transition: color var(--transition-base);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

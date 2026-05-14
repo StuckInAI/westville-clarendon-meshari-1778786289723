@@ -1,0 +1,141 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1600&q=85&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(30, 58, 14, 0.82) 0%,
+    rgba(45, 80, 22, 0.65) 40%,
+    rgba(196, 98, 45, 0.3) 100%
+  );
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px var(--space-lg) var(--space-4xl);
+  width: 100%;
+}
+
+.badge {
+  display: inline-block;
+  background: var(--color-terracotta);
+  color: var(--color-cream);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-lg);
+}
+
+.headline {
+  font-family: var(--font-heading);
+  font-size: clamp(3.5rem, 9vw, 7rem);
+  font-weight: 700;
+  color: var(--color-cream);
+  line-height: 1.0;
+  margin-bottom: var(--space-xl);
+  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+
+.headlineAccent {
+  color: var(--color-gold);
+  font-style: italic;
+}
+
+.subtext {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: rgba(249, 245, 238, 0.9);
+  max-width: 520px;
+  margin-bottom: var(--space-2xl);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.ctaGroup {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-4xl);
+}
+
+.ctaPrimary {
+  background: var(--color-gold);
+  color: var(--color-forest-dark);
+  padding: 1rem 2rem;
+  border-radius: var(--radius-full);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  box-shadow: 0 4px 20px rgba(212, 168, 83, 0.4);
+}
+
+.ctaPrimary:hover {
+  background: var(--color-gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(212, 168, 83, 0.5);
+}
+
+.ctaSecondary {
+  background: transparent;
+  color: var(--color-cream);
+  padding: 1rem 2rem;
+  border-radius: var(--radius-full);
+  font-size: 1rem;
+  font-weight: 600;
+  border: 2px solid rgba(249,245,238,0.7);
+  transition: background var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.ctaSecondary:hover {
+  background: rgba(249,245,238,0.1);
+  border-color: var(--color-cream);
+  transform: translateY(-2px);
+}
+
+.scrollHint {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  color: rgba(249,245,238,0.6);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.scrollLine {
+  width: 40px;
+  height: 1px;
+  background: rgba(249,245,238,0.5);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    background-attachment: scroll;
+  }
+  .content {
+    padding-top: 110px;
+  }
+  .ctaGroup {
+    flex-direction: column;
+  }
+  .ctaPrimary, .ctaSecondary {
+    text-align: center;
+  }
+}
