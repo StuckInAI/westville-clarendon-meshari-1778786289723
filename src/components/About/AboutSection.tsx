@@ -19,16 +19,20 @@ export default function AboutSection() {
       <div className={styles.container}>
         <div className={styles.textCol}>
           <div className={styles.eyebrow}>Our Story</div>
-          <h2 className={styles.heading}>Born in Brooklyn.<br />Grown in California.<br /><span className={styles.accent}>Coming Home to Arlington.</span></h2>
+          <h2 className={styles.heading}>
+            Born in Brooklyn.<br />
+            Grown in California.<br />
+            <span className={styles.accent}>Coming Home to Arlington.</span>
+          </h2>
           <p className={styles.body}>
-            Westville was founded in New York City in 2003 with a simple but radical idea: build a menu around vegetables — not as a side thought, but as the star of the plate. With 24+ daily market vegetables rotating each day, no two visits are exactly alike.
+            Westville was founded in New York City in 2003 with a simple but radical idea: build a menu around vegetables &mdash; not as a side thought, but as the star of the plate. With 24+ daily market vegetables rotating each day, no two visits are exactly alike.
           </p>
           <p className={styles.body}>
-            In July 2025, Westville opened its first Virginia location right here in Clarendon — bringing that same warm, neighborhood energy to Arlington. Whether you\'re a longtime Westville fan from New York or discovering us for the first time, we\'re thrilled to be your new local.
+            In July 2025, Westville opened its first Virginia location right here in Clarendon &mdash; bringing that same warm, neighborhood energy to Arlington. Whether you&apos;re a longtime Westville fan from New York or discovering us for the first time, we&apos;re thrilled to be your new local.
           </p>
           <blockquote className={styles.quote}>
-            <p>"We\'ve always believed the best food comes from knowing your farmer and trusting the season. Every plate tells that story."</p>
-            <cite>— Jay Strauss, Founder</cite>
+            <p>&ldquo;We&apos;ve always believed the best food comes from knowing your farmer and trusting the season. Every plate tells that story.&rdquo;</p>
+            <cite>&mdash; Jay Strauss, Founder</cite>
           </blockquote>
           <div className={styles.badges}>
             {highlights.map((h) => (

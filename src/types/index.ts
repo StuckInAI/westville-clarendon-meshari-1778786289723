@@ -1,29 +1,29 @@
-export type MenuItem = {
+export interface MenuItem {
   id: string;
   name: string;
   description: string;
   price: string;
   tags: string[];
   popular?: boolean;
-};
+}
 
-export type MenuCategory = {
+export interface MenuCategory {
   id: string;
   name: string;
   icon: string;
   items: MenuItem[];
-};
+}
 
-export type Review = {
+export interface Review {
   id: string;
   name: string;
-  text: string;
   rating: number;
-  date: string;
+  text: string;
   source: string;
-};
+  date: string;
+}
 
-export type ReservationForm = {
+export interface ReservationForm {
   name: string;
   email: string;
   phone: string;
@@ -31,4 +31,4 @@ export type ReservationForm = {
   time: string;
   partySize: string;
   notes: string;
-};
+}

@@ -1,0 +1,174 @@
+.footer {
+  background: var(--color-forest-dark);
+  color: var(--color-cream);
+  padding: var(--space-4xl) 0 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg) var(--space-2xl);
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: var(--space-2xl);
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: var(--space-sm);
+}
+
+.logoMain {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-cream);
+}
+
+.logoSub {
+  font-size: 0.75rem;
+  color: var(--color-gold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.tagline {
+  font-size: 0.9rem;
+  color: rgba(249,245,238,0.7);
+  line-height: 1.7;
+}
+
+.socials {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: rgba(249,245,238,0.1);
+  color: var(--color-cream);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.socialLink:hover {
+  background: var(--color-terracotta);
+  color: var(--color-cream);
+}
+
+.yelpIcon {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.colHeading {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: var(--space-sm);
+}
+
+.address {
+  font-size: 0.9rem;
+  color: rgba(249,245,238,0.75);
+  line-height: 1.7;
+  font-style: normal;
+}
+
+.phone {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-cream);
+  transition: color var(--transition-fast);
+}
+
+.phone:hover {
+  color: var(--color-gold);
+}
+
+.hoursBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hoursRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: rgba(249,245,238,0.7);
+}
+
+.hoursNote {
+  font-size: 0.78rem;
+  color: var(--color-gold);
+  margin-top: 4px;
+}
+
+.navLinks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.navLink {
+  font-size: 0.9rem;
+  color: rgba(249,245,238,0.75);
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  padding: 0;
+  transition: color var(--transition-fast);
+  text-decoration: none;
+  display: block;
+}
+
+.navLink:hover {
+  color: var(--color-gold);
+}
+
+.bottom {
+  border-top: 1px solid rgba(249,245,238,0.1);
+  padding: var(--space-lg) 0;
+}
+
+.bottomInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  color: rgba(249,245,238,0.5);
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.bottomRight {
+  color: rgba(249,245,238,0.5);
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
