@@ -1,0 +1,33 @@
+.placeholder {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  isolation: isolate;
+}
+
+.rounded {
+  border-radius: var(--radius-lg);
+}
+
+.grain {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.18), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(44,26,14,0.12), transparent 50%),
+    repeating-linear-gradient(0deg, rgba(44,26,14,0.02) 0 1px, transparent 1px 3px);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.label {
+  position: absolute;
+  bottom: 14px;
+  left: 16px;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(44, 26, 14, 0.55);
+  font-weight: 500;
+}

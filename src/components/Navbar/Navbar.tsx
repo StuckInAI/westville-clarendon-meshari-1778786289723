@@ -1,62 +1,63 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 import styles from './Navbar.module.css';
 import clsx from 'clsx';
+
+const links = [
+  { label: 'Recipes', to: '/recipes' },
+  { label: 'About', to: '/about' },
+  { label: 'Store', to: '/store' },
+  { label: 'Work With Me', to: '/work-with-me' },
+];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 24);
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { label: 'About', href: '#about' },
-    { label: 'Menu', href: '#menu' },
-    { label: 'Hours & Location', href: '#hours' },
-    { label: 'Reservations', href: '#reservations' },
-  ];
-
-  const handleNavClick = (href: string) => {
+  useEffect(() => {
     setIsOpen(false);
-    const el = document.querySelector(href);
-    if (el) {
-      const navHeight = 72;
-      const top = el.getBoundingClientRect().top + window.scrollY - navHeight;
-      window.scrollTo({ top, behavior: 'smooth' });
-    }
-  };
+  }, [location.pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
 
   return (
     <nav className={clsx(styles.nav, scrolled && styles.navScrolled)}>
       <div className={styles.container}>
-        <div className={styles.logo} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          <span className={styles.logoMain}>Westville</span>
-          <span className={styles.logoSub}>Clarendon</span>
-        </div>
+        <Link to="/" className={styles.logo} aria-label="Alchenny home">
+          <span className={styles.logoText}>alchenny</span>
+          <span className={styles.logoIcon}>🍪</span>
+        </Link>
 
         <ul className={styles.desktopLinks}>
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <button className={styles.navLink} onClick={() => handleNavClick(link.href)}>
+          {links.map((link) => (
+            <li key={link.to}>
+              <NavLink
+                to={link.to}
+                className={({ isActive }) => clsx(styles.navLink, isActive && styles.navLinkActive)}
+              >
                 {link.label}
-              </button>
+              </NavLink>
             </li>
           ))}
           <li>
-            <a
-              href="https://www.ordernerd.com/westville"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.orderBtn}
-            >
-              Order Online
-            </a>
+            <Link to="/croissant-crew" className={styles.crewBtn}>
+              The Croissant Crew
+              <ArrowUpRight size={14} />
+            </Link>
           </li>
         </ul>
 
@@ -64,29 +65,25 @@ export default function Navbar() {
           className={styles.hamburger}
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
+          aria-expanded={isOpen}
         >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+          {isOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
       <div className={clsx(styles.mobileMenu, isOpen && styles.mobileMenuOpen)}>
         <ul className={styles.mobileLinks}>
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <button className={styles.mobileLink} onClick={() => handleNavClick(link.href)}>
+          {links.map((link) => (
+            <li key={link.to}>
+              <Link to={link.to} className={styles.mobileLink}>
                 {link.label}
-              </button>
+              </Link>
             </li>
           ))}
           <li>
-            <a
-              href="https://www.ordernerd.com/westville"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.mobileOrderBtn}
-            >
-              Order Online
-            </a>
+            <Link to="/croissant-crew" className={styles.mobileCrewBtn}>
+              The Croissant Crew <ArrowUpRight size={16} />
+            </Link>
           </li>
         </ul>
       </div>
