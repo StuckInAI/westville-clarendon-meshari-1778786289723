@@ -1,1 +1,1 @@
-No build error log was provided. No changes needed.
+Build log was empty — no errors detected. No files modified.
