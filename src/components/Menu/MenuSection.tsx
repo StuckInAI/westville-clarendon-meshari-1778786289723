@@ -22,7 +22,7 @@ export default function MenuSection() {
       <div className={styles.container}>
         <div className={styles.header}>
           <div className={styles.eyebrow}>Our Menu</div>
-          <h2 className={styles.heading}>What We\'re Known For</h2>
+          <h2 className={styles.heading}>What We&apos;re Known For</h2>
           <p className={styles.subtext}>Fresh, seasonal, and endlessly satisfying. Our menu rotates with the harvest.</p>
         </div>
 
